@@ -6,6 +6,8 @@ import importlib.util
 import shlex
 import platform
 
+os.makedirs("log/images", exist_ok=True)
+
 dir_repos = "repositories"
 python = sys.executable
 git = os.environ.get('GIT', "git")
