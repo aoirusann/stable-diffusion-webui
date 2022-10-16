@@ -20,8 +20,11 @@ def ClearCache():
 	])
 
 	for cache_dir in cache_dirs:
-		print("Cleaning " + cache_dir + "...")
-		shutil.rmtree(cache_dir)
+		if os.path.exists(cache_dir):
+			print("Cleaning " + cache_dir + "...")
+			shutil.rmtree(cache_dir)
+		else:
+			print("Not exist: " + cache_dir)
 
 if __name__ == "__main__":
 	if not os.path.exists("webui.bat"):
